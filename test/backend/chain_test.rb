@@ -53,6 +53,10 @@ class I18nBackendChainTest < Test::Unit::TestCase
     assert_equal ['Foo', 'Bar'], I18n.t([:foo, :bar])
   end
 
+  test "transliteration works" do
+    assert_equal "ola", I18n.transliterate("olá")
+  end
+
   protected
 
     def backend(translations)
